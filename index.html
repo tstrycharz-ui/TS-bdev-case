@@ -469,6 +469,47 @@
           <p class="item-note">At least 1 generates $1M+ annualized run-rate, driving 5% of TOTAL new customers (1.6k annualized).</p>
         </div>
       </div>
+      <!-- Turnkey Advantage Component -->
+      <div style="border:1.5px solid #1a2332;border-radius:10px;overflow:hidden;margin-bottom:14px;">
+        <div onclick="toggleTurnkey(this)" style="cursor:pointer;background:linear-gradient(135deg,#1a2332 0%,#2d3f5c 100%);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;user-select:none;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </div>
+            <div>
+              <p style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.75);margin:0 0 2px;text-transform:uppercase;letter-spacing:0.05em;">Built to execute day one.</p>
+              <p style="font-size:15px;font-weight:700;color:#fff;margin:0;">B2B Partnerships — Custom Playbook &amp; CRM</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="background:rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap;">Expand for Demo</span>
+            <span style="color:#fff;font-size:13px;transition:transform 0.2s;" class="sub-chevron">▼</span>
+          </div>
+        </div>
+        <div id="turnkey-body" style="display:none;background:#F0F4FA;padding:14px 16px;border-top:1px solid #1a2332;">
+          <p style="font-size:12px;color:#1a2332;font-weight:600;margin:0 0 4px;">One tool. Zero learning curve. Immediate execution.</p>
+          <p style="font-size:12px;color:#555;line-height:1.6;margin:0 0 12px;">Every center gets a pre-loaded partnership system ready to deploy — CMs open it and start working qualified leads with proven playbooks. No setup, no training, no reinventing the wheel. Speed and consistency without the ramp-up.</p>
+          <a href="https://tstrycharz-ui.github.io/Center-B2B-Partnership-CRMs/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1a2332;color:#fff;font-size:12px;font-weight:700;padding:7px 14px;border-radius:6px;text-decoration:none;margin-bottom:14px;">Click to open demo <span style="font-size:14px;">→</span></a>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+            <div style="background:#fff;border:0.5px solid #CBD5E1;border-radius:8px;padding:10px 12px;">
+              <p style="font-size:11px;font-weight:700;color:#1a2332;margin:0 0 4px;">Pre-Loaded Lead Database</p>
+              <p style="font-size:11px;color:#555;line-height:1.5;margin:0;">Qualified prospects ready to contact — vets, apartments, trainers, groomers. Scored and prioritized so CMs focus time on highest-value opportunities.</p>
+            </div>
+            <div style="background:#fff;border:0.5px solid #CBD5E1;border-radius:8px;padding:10px 12px;">
+              <p style="font-size:11px;font-weight:700;color:#1a2332;margin:0 0 4px;">Smart Lead Scoring</p>
+              <p style="font-size:11px;color:#555;line-height:1.5;margin:0;">Built-in qualification metrics flag best-fit partners automatically. CMs know who to meet first and why they're worth the outreach.</p>
+            </div>
+            <div style="background:#fff;border:0.5px solid #CBD5E1;border-radius:8px;padding:10px 12px;">
+              <p style="font-size:11px;font-weight:700;color:#1a2332;margin:0 0 4px;">Pipeline Tracking &amp; Meeting Logs</p>
+              <p style="font-size:11px;color:#555;line-height:1.5;margin:0;">Track every relationship from cold outreach to active partnership. Log meetings, document commitments, never lose momentum.</p>
+            </div>
+            <div style="background:#fff;border:0.5px solid #CBD5E1;border-radius:8px;padding:10px 12px;">
+              <p style="font-size:11px;font-weight:700;color:#1a2332;margin:0 0 4px;">Partner-Specific Playbooks</p>
+              <p style="font-size:11px;color:#555;line-height:1.5;margin:0;">Step-by-step outreach guides built from top CM feedback. Tailored by partner type — what to say, when to follow up, how to close.</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- AI Component -->
       <div style="border:1.5px solid #C9633A;border-radius:10px;overflow:hidden;margin-bottom:14px;">
         <!-- Header -->
@@ -602,6 +643,13 @@
 <script>
 function toggle(h){const b=h.nextElementSibling,c=h.querySelector('.chevron'),o=b.classList.contains('open');b.classList.toggle('open',!o);c.classList.toggle('open',!o);}
 function subtoggle(h){const b=h.nextElementSibling,c=h.querySelector('.sub-chevron'),o=b.classList.contains('open');b.classList.toggle('open',!o);c.classList.toggle('open',!o);}
+function toggleTurnkey(header){
+  var body=document.getElementById('turnkey-body');
+  var chev=header.querySelector('.sub-chevron');
+  var open=body.style.display!=='none';
+  body.style.display=open?'none':'block';
+  if(chev) chev.style.transform=open?'':'rotate(180deg)';
+}
 function toggleAI(header){
   var body=document.getElementById('ai-body');
   var chev=header.querySelector('.sub-chevron');
