@@ -114,8 +114,45 @@
   .roi-table .green { color: #059669; font-weight: 600; }
 
   @media (max-width: 600px) {
+    .wrap { padding: 20px 14px 48px; }
+    .cover-title { font-size: 20px; }
+
+    /* KPI table */
     .kpi-split { grid-template-columns: 1fr; }
+
+    /* Section headers — grid layout: sh-left spans full top row, revenue+chevron below */
+    .section-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; padding: 12px 14px; gap: 0; }
+    .sh-left { grid-column: 1 / -1; grid-row: 1; display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+    .sh-title { font-size: 13px; }
+    .sh-meta { font-size: 11px; }
+    .sh-revenue { grid-row: 2; grid-column: 1; font-size: 13px; margin-right: 0; align-self: center; }
+    .chevron { grid-row: 2; grid-column: 2; align-self: center; }
+
+    /* Subsection headers — same pattern */
+    .subsection-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; padding: 10px 12px; gap: 0; }
+    .sub-sh-left { grid-column: 1 / -1; grid-row: 1; display: flex; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+    .sub-sh-title { font-size: 12px; }
+    .sub-sh-meta { font-size: 10px; }
+    .sub-sh-revenue { grid-row: 2; grid-column: 1; font-size: 12px; margin-right: 0; align-self: center; }
+    .sub-chevron { grid-row: 2; grid-column: 2; align-self: center; }
+
+    /* Body */
+    .section-body { padding: 0 14px 14px; }
+    .body-lead { font-size: 12px; margin: 12px 0 14px; }
+
+    /* Content grids */
     .two-col { grid-template-columns: 1fr; }
+    .cards-4col { grid-template-columns: 1fr 1fr !important; }
+    .cards-3col { grid-template-columns: 1fr 1fr !important; }
+    .cards-2col { grid-template-columns: 1fr !important; }
+
+    /* Tables */
+    .roi-table { font-size: 11px; }
+    .roi-table td, .roi-table th { padding: 6px 8px; }
+
+    /* Timeline */
+    .timeline-row { grid-template-columns: 56px 1fr; gap: 8px; }
+    .tl-item { font-size: 12px; }
   }
 </style>
 </head>
@@ -359,7 +396,7 @@
         <div id="bailey-body" style="display:none;border:1.5px solid #1E3A5F;border-top:none;border-radius:0 0 10px 10px;padding:16px 18px;background:#F0F7FF;">
           <p style="font-size:13px;color:#1E3A5F;font-weight:600;margin:0 0 8px;"><strong>Bailey is the conversion layer that makes every other CRM channel perform.</strong> Without it, campaigns generate interest but not bookings.</p>
           <p style="font-size:12px;color:#374151;line-height:1.6;margin:0 0 12px;">Every email and SMS in our CRM is two-way — customers reply directly, a CS specialist picks it up, and the booking gets completed. This single integration is what turns the CRM growth engine from a broadcast system into a <strong>revenue-generating conversion machine.</strong></p>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
+          <div class="cards-3col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
             <div style="background:#fff;border:1px solid #BFDBFE;border-radius:8px;padding:10px 12px;text-align:center;">
               <p style="font-size:18px;font-weight:700;color:#1E3A5F;margin:0 0 2px;">1,475</p>
               <p style="font-size:10px;color:#555;margin:0;">Confirmed bookings<br>8 months live</p>
@@ -596,7 +633,7 @@
           <p style="font-size:12px;color:#7C3A24;font-weight:600;margin:0 0 4px;">1 person. AI-scale execution. What used to take a whole team and a big budget.</p>
           <p style="font-size:12px;color:#555;line-height:1.6;margin:0 0 12px;">Every deliverable in Pillar 2 is built and executed with Claude and AI tooling — compressing timelines, eliminating headcount dependency, and enabling a level of output that wouldn't be possible otherwise. Speed, scale, and cost efficiency in one role.</p>
           <!-- 1x4 cards -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+          <div class="cards-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
             <div style="background:#fff;border:0.5px solid #E5C4B4;border-radius:8px;padding:10px 12px;">
               <p style="font-size:11px;font-weight:700;color:#C9633A;margin:0 0 4px;">B2B Playbooks</p>
               <p style="font-size:11px;color:#555;line-height:1.5;margin:0;">AI-built partner playbooks scaled across every center — no agency, no extra headcount.</p>
@@ -623,7 +660,7 @@
             </div>
             <div style="padding:12px 14px;">
               <p style="font-size:12px;color:#555;line-height:1.6;margin:0 0 10px;">A natural extension of the AI-first work already being done — expanding AI capability beyond GTM into company-wide efficiency. The mandate: find where people are losing time, identify the bottleneck, and use AI or existing tech to solve it.</p>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div class="cards-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
                 <div style="background:#FDF4F0;border:0.5px solid #E5C4B4;border-radius:7px;padding:10px 12px;">
                   <p style="font-size:11px;font-weight:700;color:#C9633A;margin:0 0 4px;">AI Assessments</p>
                   <p style="font-size:11px;color:#555;line-height:1.5;margin:0;">Audit employee workstreams to identify bottlenecks — then design and deploy AI-driven fixes using new or existing tools in the tech stack.</p>
